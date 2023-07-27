@@ -1,15 +1,29 @@
 class Solution(object):
-    def groupAnagrams(self, strs):
+
+    def isPalindrome(self, s):
         """
-        :type strs: List[str]
-        :rtype: List[List[str]]
+        :type s: str
+        :rtype: bool
         """
 
-        res = {}
-        for s in strs:
-            count = [0] * 26
-            for c in s:
-                count[ord(c) - ord('a')] += 1
-            res[tuple(count)].append(s)
+        a = 0
+        b = len(s)-1
+        s.replace(" ", "")
 
-        return res.values()
+
+        while True:
+
+            if s[a] == s[b]:
+             a += 1
+             b -= 1
+            elif a == b:
+                break
+
+            else:
+                return False
+
+
+        return True
+
+
+i = Solution()
