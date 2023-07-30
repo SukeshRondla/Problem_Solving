@@ -8,3 +8,5 @@ class Solution:
             prev = curr
             curr = temp
         return prev
+
+#Reverse List 
