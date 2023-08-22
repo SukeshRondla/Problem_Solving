@@ -4,7 +4,6 @@ class Solution:
         r = len(numbers) - 1
 
         while l < r:
-
             s = numbers[l] + numbers[r]
 
             if s == target:
