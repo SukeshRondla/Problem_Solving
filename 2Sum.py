@@ -1,17 +1,13 @@
+from typing import List
+
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        l = 0
-        r = len(numbers) - 1
+        num_indices = {}
 
-        while l < r:
-            s = numbers[l] + numbers[r]
-
-            if s == target:
-                return [l + 1, r + 1]
-
-            if s > target:
-                r -= 1
-            else:
-                l += 1
+        for i, num in enumerate(numbers):
+            complement = target - num
+            if complement in num_indices:
+                return [num_indices[complement] + 1, i + 1]
+            num_indices[num] = i
 
         return []
